@@ -1,0 +1,31 @@
+<div
+  class="weather-card"
+  [attr.aria-label]="
+    'weather details for ' + (weatherValue?.dt_txt | date : 'HH:mm')
+  "
+>
+  <div class="weather-temp">
+    <h6 aria-label="Time">
+      {{ weatherValue?.dt_txt | date : "HH:mm" : userTimeZone }}
+    </h6>
+    <img
+      [src]="weatherValue?.weather?.[0]?.icon | weatherIcon"
+      [alt]="'Weather description: ' + (weatherValue?.weather?.[0]?.description)"
+      role="img"
+    />
+    <h4 aria-label="Temperature">
+      {{ weatherValue?.main?.temp | round }}<sup>o</sup>C
+    </h4>
+  </div>
+  <div class="weather-footer">
+    <div class="weather-detail">
+      <span class="weather-detail-wind" aria-label="Wind speed"
+        ><mat-icon aria-hidden="true">air</mat-icon
+        >{{ weatherValue?.wind?.speed | round }} meters/sec</span
+      >
+      <p aria-label="Weather description">
+        {{ weatherValue?.weather?.[0]?.description }}
+      </p>
+    </div>
+  </div>
+</div>

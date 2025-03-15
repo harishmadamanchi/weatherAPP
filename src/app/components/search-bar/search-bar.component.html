@@ -1,0 +1,37 @@
+<form [formGroup]="searchForm">
+  <div class="search-container">
+    <!-- container for search and button -->
+    <mat-form-field class="search-field">
+      <mat-icon matPrefix>location_on</mat-icon>
+      <input
+        matInput
+        [matAutocomplete]="suggestions"
+        aria-autocomplete="list"
+        formControlName="searchInput"
+        placeholder="search for location..."
+      />
+    </mat-form-field>
+    <button
+      class="custom-button"
+      (click)="getLocationWeatherDetails()"
+      aria-label="Search weather for selected location"
+    >
+      search
+    </button>
+  </div>
+  <!-- autocomplete mat options  -->
+  <mat-autocomplete
+    #suggestions="matAutocomplete"
+    (optionSelected)="selectedOption($event)"
+  >
+    @for (item of autoCompleteResults(); track $index) {
+    <mat-option
+      [value]="item"
+      role="option"
+      [attr.aria-label]="item.name + ', ' + item.country"
+    >
+      {{ item.name }},&nbsp;{{ item.country }}
+    </mat-option>
+    }
+  </mat-autocomplete>
+</form>

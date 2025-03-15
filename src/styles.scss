@@ -1,1 +1,35 @@
 /* You can add global styles to this file, and also import other style files */
+
+$text-color-primary : #001f5b;
+
+html, body { height: 100%; }
+body { 
+    margin: 0; 
+    font-family: Roboto, "Helvetica Neue", sans-serif; 
+    background-image: url('assets/background.jpg'); 
+    background-size: cover;  
+    background-repeat: no-repeat; 
+    background-attachment: fixed;
+    background-position: center center;
+}
+
+.mdc-tab__text-label {
+    color: $text-color-primary !important;
+}  
+
+.mat-mdc-tab.mdc-tab--active {
+    background-color: #e1dddd99 !important;
+}
+
+.mat-mdc-tab.mdc-tab--active .mdc-tab__text-label {
+    font-weight: bold;
+}
+
+.mdc-tab-indicator__content--underline {
+    border: unset !important;
+}
+
+  
+
+
+
