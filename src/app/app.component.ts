@@ -26,7 +26,7 @@ export class AppComponent {
     searchInput : new FormControl('')
   })
   weatherForeCast!: WeatherData[];
-  groupedData: { [x: string]: any[]; } = {};
+  groupedData: { [x: string]: WeatherData[]; } = {};
 
   groupedDataKeys: string[] = [];
   
@@ -69,8 +69,8 @@ export class AppComponent {
 
 
   // grouping the response forecast list based on date
-  groupData(weatherForeCast: any) {
-    const groupedData = weatherForeCast.reduce((accumulator: { [x: string]: any[]; }, item: WeatherData) => {
+  groupData(weatherForeCast: WeatherData[]) {
+    const groupedData = weatherForeCast.reduce((accumulator: { [x: string]: WeatherData[]; }, item: WeatherData) => {
       const extractDate = item.dt_txt.split(" ")[0];
       if(!accumulator[extractDate]) {
         accumulator[extractDate] = [];
