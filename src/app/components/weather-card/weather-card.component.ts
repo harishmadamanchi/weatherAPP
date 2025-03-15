@@ -1,10 +1,9 @@
 import { Component, Input } from '@angular/core';
 import { MatCardModule } from '@angular/material/card';
 import { MatIconModule } from '@angular/material/icon';
-import { WeatherData } from '../../interfaces/weather';
+import { WeatherData } from '../../interfaces';
 import { CommonModule } from '@angular/common';
-import { RoundPipe } from '../../pipes/roundValue.pipe';
-import { WeatherIconPipe } from '../../pipes/weatherIcon.pipe';
+import { RoundPipe, WeatherIconPipe } from '../../pipes';
 
 @Component({
   selector: 'app-weather-card',

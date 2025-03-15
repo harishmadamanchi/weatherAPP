@@ -4,12 +4,11 @@ import { CommonModule } from '@angular/common';
 import { MatTabsModule } from '@angular/material/tabs';
 
 
-import { geocode } from './interfaces/geocode';
-import { WeatherData, WeatherResponse } from './interfaces/weather';
+import { WeatherData, WeatherResponse, geocode } from './interfaces';
 import { SearchBarComponent } from "./components/search-bar/search-bar.component";
 import { WeatherCardComponent } from './components/weather-card/weather-card.component';
-import { DayLabelPipe } from './pipes/dayLabel.pipe';
-import { WeatherService } from './services/weather/weather.service';
+import { DayLabelPipe } from './pipes';
+import { WeatherService } from './services';
 import { Subscription } from 'rxjs';
 
 @Component({

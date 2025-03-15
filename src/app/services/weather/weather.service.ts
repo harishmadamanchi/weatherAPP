@@ -1,8 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
-import { WeatherResponse } from '../../interfaces/weather';
-import { geocode } from '../../interfaces/geocode';
+import { WeatherResponse, geocode } from '../../interfaces';
 import { environment } from '../../../environments/environment';
 
 @Injectable({

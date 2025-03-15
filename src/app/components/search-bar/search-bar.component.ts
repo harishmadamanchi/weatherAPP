@@ -6,9 +6,9 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
-import { geocode } from '../../interfaces/geocode';
+import { geocode } from '../../interfaces';
 import { debounceTime, distinctUntilChanged, filter, Subscription, switchMap } from 'rxjs';
-import { LocationsService } from '../../services/locations/locations.service';
+import { LocationsService } from '../../services';
 
 @Component({
   selector: 'app-search-bar',
